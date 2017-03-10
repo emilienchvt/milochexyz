@@ -34,7 +34,7 @@ function getRandomArtist(){
 }
 
 var setPlayer = function(){
-  $("#artistpic").attr('src', 'loading.gif')
+  $("#artistpic").attr('src', 'https://media.giphy.com/media/l0He4fJxPCbfqv7Xi/source.gif')
 
   var artist=getRandomArtist()
   var uri = 'spotify:artist:'+artist.id

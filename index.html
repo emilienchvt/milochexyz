@@ -13,22 +13,41 @@
       <div class="jumbotron">
         <h1 id='title'>Theme:</h1>
         <p id="descr">temperature</p>
+        <p>Grab a coffee, lauch some nice playlist and start browsing Tech and Business Newsfeeds.</p>
       </div>
-      <img id="pic" src="loading.gif" class="img-responsive" alt="city meteo">
+      <img id="pic" src="https://media.giphy.com/media/l0He4fJxPCbfqv7Xi/source.gif" class="img-responsive" alt="city meteo">
     </div><br>
 
+    <!-- Music App container: embedded spotify player, artist pic+caption -->
+    <div class="container">
+      <div class="jumbotron">
+        <h1 id='title'>Music</h1>
+        <p id="descr">Let's enjoy some good music ;)</p>
+        <button type="button" class="btn btn-default btn-lg" onclick="setPlayer()">
+          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random artist.
+        </button>
+      </div>
+
+      <div class='col-md-3'>
+        <h2 id="artname"></h2>
+        <iframe id='player' width="250" height="380" frameborder="0" allowtransparency="true"></iframe>
+      </div>
+      <div class='col-md-9'>
+        <img class="img-responsive" id="artistpic"></img>
+        <p id="artistcaption"></p>
+      </div>
+    </div><br>
+
+    <!-- News Feed container: article list using angular -->
     <div class="container" ng-app="appNews" ng-controller="newsCtrl">
       <div class="jumbotron">
         <h1>Kiosk(i)</h1>
         <p>Here are cool articles from several selected sources. Click "read more" for full articles.</p>
-
         <button type="button" class="btn btn-default btn-lg" ng-click="switchService()">
-          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random feed, please.
+          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random feed.
         </button>
       </div>
       <br>
-
-      <!-- Second container for the news Feed. Running angular with appNews.js -->
       <div ng-repeat="article in news">
         <div class = "container">
           <div class="col-md-6">
@@ -43,27 +62,6 @@
       </div>
     </div>
     <br>
-
-    <!-- Just a bunch of musics -->
-    <div class="container" ng-app="appMusic" ng-controller="musicCtrl">
-      <div class="jumbotron">
-        <h1 id='title'>Music</h1>
-        <p id="descr">Now let's enjoy some music ;)</p>
-        <button type="button" class="btn btn-default btn-lg" onclick="setPlayer()">
-          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random artist, please.
-        </button>
-      </div>
-
-      <div class='col-md-4'>
-        <h2 id="artname"></h2>
-        <iframe id='player' width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-      </div>
-      <div class='col-md-8'>
-        <img src="loading.gif" class="img-responsive" id="artistpic"></img>
-        <p id="artistcaption"></p>
-      </div>
-
-    </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins and custom functions) -->
