@@ -17,13 +17,13 @@
       <img id="pic" src="loading.gif" class="img-responsive" alt="city meteo">
     </div><br>
 
-    <div class="container" ng-app="appNews" ng-controller="newsCtrl" id="newsSection">
+    <div class="container" ng-app="appNews" ng-controller="newsCtrl">
       <div class="jumbotron">
         <h1>Kiosk(i)</h1>
-        <p>Here are some nice articles from {{currentSelection}}. Click "read more" for full articles.</p>
+        <p>Here are cool articles from several selected sources. Click "read more" for full articles.</p>
 
         <button type="button" class="btn btn-default btn-lg" ng-click="switchService()">
-          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Change News Source
+          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random feed, please.
         </button>
       </div>
       <br>
@@ -37,7 +37,7 @@
           <div class="col-md-6">
             <h2>{{article.title}}</h2>
             <p>{{article.description}}</p>
-            <a href={{article.url}}>Read more...</a>
+            <a href={{article.url}} target="_blank">Read more...</a>
           </div>
         </div>
       </div>
@@ -45,19 +45,22 @@
     <br>
 
     <!-- Just a bunch of musics -->
-    <div class="container" ng-app="">
+    <div class="container" ng-app="appMusic" ng-controller="musicCtrl">
       <div class="jumbotron">
         <h1 id='title'>Music</h1>
-        <p id="descr">Now let's listen some music ;)</p>
+        <p id="descr">Now let's enjoy some music ;)</p>
+        <button type="button" class="btn btn-default btn-lg" onclick="setPlayer()">
+          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Another random artist, please.
+        </button>
       </div>
+
       <div class='col-md-4'>
-        <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:63dDpdoVHvx5RkK87g4LKk&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+        <h2 id="artname"></h2>
+        <iframe id='player' width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </div>
-      <div class='col-md-4'>
-        <iframe src="https://embed.spotify.com/?uri=spotify:user:milosche:playlist:1wGyfoneUt22FG78YuhlNT&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-      </div>
-      <div class='col-md-4'>
-        <iframe src="https://embed.spotify.com/?uri=spotify:artist:74ASZWbe4lXaubB36ztrGX&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+      <div class='col-md-8'>
+        <img src="loading.gif" class="img-responsive" id="artistpic"></img>
+        <p id="artistcaption"></p>
       </div>
 
     </div>
@@ -79,7 +82,7 @@
 
     <script src="appWeather.js"></script>
     <script src="appNews.js"></script>
-
+    <script src="appMusic.js"></script>
 
 
     <br><br><br>

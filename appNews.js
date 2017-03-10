@@ -9,20 +9,17 @@ app.controller('newsCtrl', function($scope) {
     return serv[Math.floor(Math.random() * serv.length)];
   }
 
-  $scope.currentSelection= "the-economist";
-
   $scope.news
 
   $scope.switchService = function(){
-    $scope.currentSelection = $scope.getRandomMedia()
-    $scope.setNews()
-  }
-
-  $scope.setNews=function(){
-    var url='https://newsapi.org/v1/articles?source='+$scope.currentSelection+'&sortBy=top&apiKey=7950a784ca96493b8cb9eb743569c29b'
+    var currentSelection = $scope.getRandomMedia()
+    var url='https://newsapi.org/v1/articles?source='+currentSelection+'&sortBy=top&apiKey=7950a784ca96493b8cb9eb743569c29b'
     $.get(url, function(data){
       $scope.news = data.articles
+      $scope.$digest()
     })
   }
+
+  $scope.switchService()
 
 });
