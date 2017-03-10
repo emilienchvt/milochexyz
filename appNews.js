@@ -2,7 +2,7 @@ var app = angular.module('appNews', []);
 
 app.controller('newsCtrl', function($scope) {
 
-  $scope.newsSevices = ['google-news', 'techcrunch', 'the-wall-street-journal', 'the-economist', 'new-scientist', 'bloomberg', 'financial-times'];
+  $scope.newsSevices = ['techcrunch', 'the-economist', 'new-scientist', 'financial-times', 'engadget', 'national-geographic', 'recode'];
 
   $scope.getRandomMedia = function(){
     var serv = $scope.newsSevices
