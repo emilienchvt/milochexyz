@@ -34,6 +34,8 @@ function getRandomArtist(){
 }
 
 var setPlayer = function(){
+  $("#artistpic").attr('src', 'loading.gif')
+
   var artist=getRandomArtist()
   var uri = 'spotify:artist:'+artist.id
   var url= "https://embed.spotify.com/?uri="+uri+"&theme=white"
