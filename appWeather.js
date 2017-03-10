@@ -1,6 +1,6 @@
 
 function getRandomCity(){
-  var cities = ['Paris', 'Helsinki', 'Dublin', 'London', 'Madrid', 'Berlin', 'Oslo', 'Brussels', 'Stockholm', 'Prague']
+  var cities = ['Paris', 'Helsinki', 'Dublin', 'London', 'Madrid', 'Berlin', 'Oslo', 'Brussels', 'Stockholm', 'Prague', 'Amsterdam']
   var index = Math.floor((Math.random() * cities.length));
   return cities[index]
 }
@@ -32,16 +32,24 @@ function getWeather(city){
 
 
 
-    document.querySelector("#title").innerHTML = "<b>"+cityName+"</b> "+ getHour(cityName)+":"+getMins(cityName)
+    document.querySelector("#title").innerHTML = "Hello, <b>"+cityName+"</b> "+ getHour(cityName)+":"+getMins(cityName)
     document.querySelector("#descr").innerHTML = "Temperature: <b>"+tempCelcius+"°C</b>, "+weather
 
 
-    var q = cityName+" city "+weather
-    if (getHour(cityName)>20 || getHour(cityName)<8) {
-      q+=" night"
-    } else {
+    var q = cityName+" "+weather
+
+    var hour=getHour(cityName)
+
+    if (hour>5 & getHour(cityName)<10) {
+      q+=" sunrise"
+    } else if (hour>9 & getHour(cityName)<18) {
       q+=" day"
+    } else if (hour>17 & getHour(cityName)<22) {
+      q+=" sunset"
+    } else {
+      q+=" night"
     }
+
     var cx = "001308167617373275063:cri02evdkiu"
     var apiKey = "AIzaSyCUwqvQF5VbXJgJ1wudIbtk7mEEJMwkx9s"
     var urlBingSearch = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?size=Wallpaper&q="
