@@ -29,7 +29,7 @@
       <br>
 
       <!-- Second container for the news Feed. Running angular with appNews.js -->
-      <div data-ng-repeat="article in news">
+      <div ng-repeat="article in news">
         <div class = "container">
           <div class="col-md-6">
             <img src={{article.urlToImage}} class='img-responsive'></img>
@@ -50,13 +50,13 @@
         <h1 id='title'>Music</h1>
         <p id="descr">Now let's listen some music ;)</p>
       </div>
-      <div class='col-md-4' ng-repeat='uri in [1,2,3]'>
+      <div class='col-md-4'>
         <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:63dDpdoVHvx5RkK87g4LKk&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </div>
-      <div class='col-md-4' ng-repeat='uri in [1,2,3]'>
+      <div class='col-md-4'>
         <iframe src="https://embed.spotify.com/?uri=spotify:user:milosche:playlist:1wGyfoneUt22FG78YuhlNT&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </div>
-      <div class='col-md-4' ng-repeat='uri in [1,2,3]'>
+      <div class='col-md-4'>
         <iframe src="https://embed.spotify.com/?uri=spotify:artist:74ASZWbe4lXaubB36ztrGX&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
       </div>
 
