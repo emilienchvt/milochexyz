@@ -10,9 +10,20 @@ app.controller('newsCtrl', function($scope) {
   }
 
   $scope.news
+  $scope.selectedMedia
 
   $scope.switchService = function(){
+
+    function cleanName(str) {
+      str=str.replace('-', ' ')
+      var lower = str.toLowerCase();
+      return " "+lower.replace(/(^| )(\w)/g, function(x) {
+        return x.toUpperCase();
+      });
+    }
+
     var currentSelection = $scope.getRandomMedia()
+    $scope.selectedMedia=cleanName(currentSelection)
     var url='https://newsapi.org/v1/articles?source='+currentSelection+'&sortBy=top&apiKey=7950a784ca96493b8cb9eb743569c29b'
     $.get(url, function(data){
       $scope.news = data.articles
