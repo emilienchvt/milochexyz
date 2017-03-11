@@ -5,10 +5,6 @@ function getRandomArtist(){
       id:'74ASZWbe4lXaubB36ztrGX'
     },
     {
-      name:'Notorious B.I.G.',
-      id:'5me0Irg2ANcsgc93uaYrpb'
-    },
-    {
       name:'Gorillaz',
       id:'3AA28KZvwAUcZuOKwyblJQ'
     },
@@ -17,8 +13,8 @@ function getRandomArtist(){
       id:'7vX3cMVyW8gtDA4y855ynF'
     },
     {
-      name:'Bob Dylan',
-      id:'74ASZWbe4lXaubB36ztrGX'
+      name:'Wax Tailor',
+      id:'3qwxSif06Qwzykdln8ZGfG'
     },
     {
       name:'Nekfeu',
@@ -27,6 +23,10 @@ function getRandomArtist(){
     {
       name:'Synapson',
       id:'5EGOerlVYxwqxaTLEWumBR'
+    },
+    {
+      name:'Alt-J',
+      id:'3XHO7cRUPCLOr6jwp8vsx5'
     },
   ]
   var index = Math.floor((Math.random() * artists.length));
