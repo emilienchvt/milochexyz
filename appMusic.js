@@ -60,6 +60,8 @@ var setPlayer = function(){
       $("#artistpic").attr('src', img_url)
       $("#artistcaption").text(img_descr)
     }
+  }).fail(function(error){
+    $("#artistpic").attr('src', "http://www.musicofiles.com/wp-content/uploads/2016/10/Live-music-bg.jpg")
   })
 }
 

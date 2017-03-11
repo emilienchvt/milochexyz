@@ -50,7 +50,7 @@ function getWeather(city){
       q+=" night"
     }
 
-    
+
     var urlBingSearch = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?size=Wallpaper&q="
 
     $.ajax({
@@ -64,6 +64,8 @@ function getWeather(city){
         img_url = data.value[0].contentUrl
         document.querySelector("#pic").src = img_url
       }
+    }).fail(function(err){
+      document.querySelector("#pic").src = "http://www.windsim.com/images/sky/sky_101.bmp"
     })
   });
 
