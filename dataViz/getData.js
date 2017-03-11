@@ -7,11 +7,15 @@ var addNode=function(artist, toNodes){
   var name = artist.name
   var spotId = artist.spotify_id
   var id = artist.id
+  var uri = 'spotify:artist:'+spotId
+  var url= "https://embed.spotify.com/?uri="+uri+"&theme=white"
+  var iframe = '<iframe width="250" height="380" frameborder="0" src='+url+' allowtransparency="true"></iframe>'
 
   var node = {
       id: id,
       label: name,
       group: genre,
+      title: iframe
   }
 
   var isin=false

@@ -2,6 +2,7 @@ var plot = function(){
   var network;
   var container = document.getElementById('mynetwork');
   var options = {
+    clickToUse:true,
     nodes: {
       shape: 'dot',
       scaling: {

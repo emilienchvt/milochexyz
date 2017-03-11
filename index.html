@@ -29,8 +29,10 @@
       </div>
 
       <div class='col-md-3'>
-        <h2 id="artname"></h2>
-        <a target="_blank" id="similarLink">Discover similar >></a>
+        <div class='container'>
+          <h2 id="artname"></h2>
+          <a target="_blank" id="similarLink">Discover similar >></a>
+        </div>
         <iframe id='player' width="250" height="380" frameborder="0" allowtransparency="true"></iframe>
       </div>
       <div class='col-md-9'>
@@ -45,7 +47,7 @@
         <h1>Kiosk(i)</h1>
         <p>Here are cool articles from several selected sources. Click "read more" for full articles.</p>
         <button type="button" class="btn btn-default btn-lg" ng-click="switchService()">
-          <span class="glyphicon glyphicon-random" aria-hidden="true" ng-bind="selectedMedia"></span>
+          <span class="glyphicon glyphicon-random" aria-hidden="true"></span>{{" "+selectedMedia}}
         </button>
       </div>
       <br>
