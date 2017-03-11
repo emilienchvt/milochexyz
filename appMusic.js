@@ -39,7 +39,6 @@ var setPlayer = function(){
   var artist=getRandomArtist()
   var uri = 'spotify:artist:'+artist.id
   var url= "https://embed.spotify.com/?uri="+uri+"&theme=white"
-  console.log("./dataViz/index.html?artist="+artist.name)
   $("#similarLink").attr("href", "./dataViz/index.html?artist="+artist.name)
   $("#player").attr('src', url)
   $("#artname").text(artist.name)

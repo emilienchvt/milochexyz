@@ -50,8 +50,7 @@ function getWeather(city){
       q+=" night"
     }
 
-    var cx = "001308167617373275063:cri02evdkiu"
-    var apiKey = "AIzaSyCUwqvQF5VbXJgJ1wudIbtk7mEEJMwkx9s"
+    
     var urlBingSearch = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?size=Wallpaper&q="
 
     $.ajax({

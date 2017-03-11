@@ -5,7 +5,7 @@ function getQueryStringValue (key) {
 artist = getQueryStringValue('artist')
 
 prepare(artist)
-  .then(x=>deepenMultiple(0,10))
+  .then(x=>deepenMultiple(0,3))
   .then(x=>plot())
   .catch(function(){
     plot()
