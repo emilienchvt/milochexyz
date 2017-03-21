@@ -1,26 +1,31 @@
 var app = angular.module('appNews', []);
 
+function cleanName(str) {
+  toks=str.replace('-', ' ')
+  var lower = toks.toLowerCase();
+  return " "+lower.replace(/(^| )(\w)/g, function(x) {
+    return x.toUpperCase();
+  });
+}
+
 app.controller('newsCtrl', function($scope) {
 
   $scope.newsSevices = ['techcrunch', 'the-economist', 'new-scientist', 'financial-times', 'engadget', 'national-geographic', 'recode'];
-
-  $scope.getRandomMedia = function(){
-    var serv = $scope.newsSevices
-    return serv[Math.floor(Math.random() * serv.length)];
-  }
-
   $scope.news
   $scope.selectedMedia
 
-  $scope.switchService = function(){
-
-    function cleanName(str) {
-      str=str.replace('-', ' ')
-      var lower = str.toLowerCase();
-      return " "+lower.replace(/(^| )(\w)/g, function(x) {
-        return x.toUpperCase();
-      });
+  // get a random newsfeed, different from the current one
+  $scope.getRandomMedia = function(){
+    var media = $scope.newsSevices
+    var randMedia = media[Math.floor(Math.random() * media.length)];
+    while(cleanName(randMedia)==$scope.selectedMedia){
+      randMedia = media[Math.floor(Math.random() * media.length)];
     }
+    return randMedia
+  }
+
+  // API call + update scope's news.
+  $scope.switchService = function(){
 
     var currentSelection = $scope.getRandomMedia()
     $scope.selectedMedia=cleanName(currentSelection)
@@ -31,6 +36,7 @@ app.controller('newsCtrl', function($scope) {
     })
   }
 
+  // Apply initially to generate the feed
   $scope.switchService()
 
 });

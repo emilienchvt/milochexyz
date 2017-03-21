@@ -39,11 +39,10 @@ var setPlayer = function(){
   var artist=getRandomArtist()
   var uri = 'spotify:artist:'+artist.id
   var url= "https://embed.spotify.com/?uri="+uri+"&theme=white"
-  $("#similarLink").attr("href", "./dataViz/index.html?artist="+artist.name)
+  $("#similarLink").attr("href", "./artistNet?&artist="+artist.name)
   $("#player").attr('src', url)
   $("#artname").text(artist.name)
 
-  var cx = "001308167617373275063:cri02evdkiu"
   var apiKey = "AIzaSyCUwqvQF5VbXJgJ1wudIbtk7mEEJMwkx9s"
   var urlBingSearch = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?size=Wallpaper&q="
 
@@ -62,9 +61,8 @@ var setPlayer = function(){
     }
   }).fail(function(error){
     $("#artistpic").attr('src', "http://www.musicofiles.com/wp-content/uploads/2016/10/Live-music-bg.jpg")
+    $("#artistcaption").text("Couldn't load artist's pic: Bing Image search limite reached")
   })
 }
-
-
 
 setPlayer()

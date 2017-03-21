@@ -6,13 +6,13 @@ function getRandomCity(){
 }
 
 function getHour(city){
-    var date = (new Date()).toLocaleString([], {timeZone: 'Europe/Paris'})
+    var date = (new Date()).toLocaleString(['en-GB'], {timeZone: 'Europe/'+city})
     var hours = date.slice(date.indexOf(':')-2, date.indexOf(':'))
     return hours
 }
 
 function getMins(city){
-    var date = (new Date()).toLocaleString([], {timeZone: 'Europe/Paris'})
+    var date = (new Date()).toLocaleString([], {timeZone: 'Europe/'+city})
     var mins = date.slice(date.indexOf(':')+1, date.indexOf(':')+3)
     return mins
 }
@@ -23,21 +23,16 @@ function getWeather(city){
   var api_key = "ca497744dd7e223818739a6983555d61"
   var api_point = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID="
 
-
   $.get( api_point+api_key, function(data){
     var cityName = data.name
     var tempKelvin = data.main.temp
     var tempCelcius = Math.round(tempKelvin-273.15)
     var weather = data.weather[0].main
 
-
-
     document.querySelector("#title").innerHTML = "Hello, <b>"+cityName+"</b> "+ getHour(cityName)+":"+getMins(cityName)
     document.querySelector("#descr").innerHTML = "Temperature: <b>"+tempCelcius+"°C</b>, "+weather
 
-
     var q = cityName+" "+weather
-
     var hour=getHour(cityName)
 
     if (hour>5 & getHour(cityName)<10) {
@@ -49,7 +44,6 @@ function getWeather(city){
     } else {
       q+=" night"
     }
-
 
     var urlBingSearch = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?size=Wallpaper&q="
 
